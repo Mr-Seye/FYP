@@ -1,15 +1,28 @@
+# OS image to pull from
 FROM debian:bullseye-slim
+
+# Declare VERSION variable for pulling specific snort version
 ENV VERSION 2.9.19
 
+
+# Declare working directory
 WORKDIR /
+
+# Creating perisitent volumes for filesharing with Kathara machines
 VOLUME /hosthome
 VOLUME /shared
+
+# Create directory for .pcap storage
 RUN mkdir -p /root/pcaps/
+
+# Import files from Dockerfile directory to be used in container namely Kathara topology and Snort rule fules
 COPY net_test /root/net_test/
 COPY etc /root/etc/
 COPY preproc_rules /root/preproc_rules/
 COPY rules /root/rules/
 COPY so_rules /root/so_rules/
+
+# Set source directory to install dependencies, Snort and Kathara
 WORKDIR /root/src/
 
 RUN  apt-get update && \
@@ -73,9 +86,12 @@ COPY include/ir_black.vim /root/.vim/colors/ir_black.vim
 # vimrc
 COPY include/vimrc /root/.vimrc
 
+# Environment variables needed to allow Kathara to run properly
 ENV PYTHONIOENCODING=utf-8
 ENV LANG C.UTF-8
 
+# Command to set the terminal used
 CMD /bin/bash
 
+# Change the directory back to the root directory (this is where the container will launch into)
 WORKDIR ..
