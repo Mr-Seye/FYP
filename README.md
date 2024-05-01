@@ -1,6 +1,6 @@
 Final Year Project Submission - README
 
-Tested on a virtual machine running Linux 20.04 LTS, latest Docker 26.x.x and Kathara 3.7.4.
+Tested on a virtual machine running Linux 20.04 LTS, latest Docker 26.1.0 and Kathara 3.7.4.
 
 Would need to download the files and extract to a directory, then use the following commands to start the container:
 
