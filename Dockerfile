@@ -9,8 +9,8 @@ ENV VERSION 2.9.19
 WORKDIR /
 
 # Creating perisitent volumes for filesharing with Kathara machines
-VOLUME /hosthome
-VOLUME /shared
+VOLUME root/net_test/hosthome
+VOLUME root/net_test/shared
 
 # Create directory for .pcap storage
 RUN mkdir -p /root/pcaps/
