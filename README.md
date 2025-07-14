@@ -7,7 +7,6 @@ A Cyber Security final year project demonstrating a **containerised environment*
 ![GitHub](https://img.shields.io/github/last-commit/yourusername/network-security-simulation?logo=github)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![Kathará](https://img.shields.io/badge/Kathará-Networking-blueviolet)
-![Snort](https://img.shields.io/badge/Snort-IDS%2FIPS-red)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04-E95420?logo=ubuntu&logoColor=white)
 ![Oracle VM](https://img.shields.io/badge/Oracle%20VM-VirtualBox-blue)
 
@@ -87,17 +86,12 @@ docker run \
 
 ## 📋 Prerequisites
 
-Ubuntu 20.04 LTS (VM recommended)
-
-Docker 26.1.0
-
-Kathará 3.7.4
-
-VirtualBox installed & virtualisation enabled
-
-Root privileges in VM
-
-X11 configured for GUI terminal support
+- Ubuntu 20.04 LTS (VM recommended)
+- Docker 26.1.0
+- Kathará 3.7.4
+- VirtualBox installed & virtualisation enabled
+- Root privileges in VM
+- X11 configured for GUI terminal support
 
 ## 👨‍💻 Author
 
