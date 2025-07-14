@@ -4,9 +4,10 @@ A Cyber Security final year project demonstrating a **containerised environment*
 
 ---
 
-![GitHub](https://img.shields.io/github/last-commit/yourusername/network-security-simulation?logo=github)
+![GitHub](https://img.shields.io/github/last-commit/Mr-Seye/network-security-simulation?logo=github)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![Kathará](https://img.shields.io/badge/Kathará-Networking-blueviolet)
+![Snort](https://img.shields.io/badge/Snort-IDS%2FIPS-red)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04-E95420?logo=ubuntu&logoColor=white)
 ![Oracle VM](https://img.shields.io/badge/Oracle%20VM-VirtualBox-blue)
 
