@@ -1,31 +1,109 @@
-WIP
+# 🔐 Network Security Simulation Project
 
-Final Year Project Submission - README
+A Cyber Security final year project demonstrating a **containerised environment** to evaluate various network security configurations. This proof-of-concept allows flexible setup of network topologies and scenarios using Docker and Kathará, including implementations of **Intrusion Detection and Prevention Systems (IDS/IPS)** with Snort.
 
-Tested on a virtual machine running Linux 20.04 LTS, latest Docker 26.1.0 and Kathara 3.7.4.
+---
 
-Would need to download the files and extract to a directory, then use the following commands to start the container:
+![GitHub](https://img.shields.io/github/last-commit/yourusername/network-security-simulation?logo=github)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Kathará](https://img.shields.io/badge/Kathará-Networking-blueviolet)
+![Snort](https://img.shields.io/badge/Snort-IDS%2FIPS-red)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04-E95420?logo=ubuntu&logoColor=white)
+![Oracle VM](https://img.shields.io/badge/Oracle%20VM-VirtualBox-blue)
 
-docker build -t <image_name_here>
+---
 
-for example: docker build -t kathara/jordan_snort:latest
--t is the tag/name of the image being built
+## 📦 Features
 
-once this is built you can start the container by running the following:
+- 🐳 Containerised simulation with Docker
+- 🔁 Customisable network topologies via Kathará
+- 🛡️ Snort-based IPS/IDS capabilities
+- 🧪 Static and dynamic routing setups
+- 🖥️ Graphical support for terminal-based simulations (via X11 forwarding)
 
-docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /var/run/docker.sock:/var/run/docker.sock -u root --cap-add NET_ADMIN -it <image_name>:<image_version>
+---
 
-for example: "docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /var/run/docker.sock:/var/run/docker.sock -u root --cap-add NET_ADMIN -it kathara/jordan_snort:latest"
+## 🛠️ Technologies Used
 
--e sets the environment variable for the display to be used by the Kathará CLIs
+- Docker 26.1.0  
+- Kathará 3.7.4  
+- Snort  
+- Oracle VirtualBox  
+- Ubuntu 20.04 LTS  
 
--v specifies certain volumes to be shared for use within the container, the first is for the xterm windows (default terminals used by Kathará machines) and the second is utilise the docker socket for the docker deamon
-to be used within the container (allows docker commands to be used in the container despite not being explicitly installed which has some concerns discussed in the report).
+---
 
--u specifies the user in this case the root user (also has some security implications)
+## 📥 Installation
 
---cap-add adds capabilities to the user, --privileged can also be used however I believe this is less secure than adding necessary capabilities. Kathará apparently also requires this for networking to function.
+1. **Download the project files**  
+   Clone the repository or download the ZIP.
 
--it allows the container to become interactive
+2. **Extract the files**  
+   Ensure the directory contains:
+   - Dockerfile  
+   - Snort rules  
+   - Network topology configs  
 
-and finally we specify which image to base the container on.
+---
+
+## 🚀 Usage
+
+### 🔧 Build the Docker image
+
+```bash
+docker build -t kathara/seye_snort:latest .
+
+```
+
+## 🧱 Run the container
+
+```bash
+docker run \
+  -e DISPLAY=$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -u root \
+  --cap-add NET_ADMIN \
+  -it kathara/seye_snort:latest
+```
+
+## 🧩 Argument Breakdown
+
+    -e DISPLAY=$DISPLAY: enables GUI for Kathará's xterm
+
+    -v /tmp/.X11-unix:/tmp/.X11-unix: shares X11 socket for GUI apps
+
+    -v /var/run/docker.sock:/var/run/docker.sock: enables Docker access inside container
+
+    -u root: needed for network interfaces
+
+    --cap-add NET_ADMIN: allows creation/configuration of virtual networks
+
+    -it: interactive terminal
+
+    Image format: kathara/seye_snort:latest
+
+    ⚠️ Not using Docker-in-Docker means some security trade-offs (e.g., root, capabilities) apply.
+
+## 📋 Prerequisites
+
+Ubuntu 20.04 LTS (VM recommended)
+
+Docker 26.1.0
+
+Kathará 3.7.4
+
+VirtualBox installed & virtualisation enabled
+
+Root privileges in VM
+
+X11 configured for GUI terminal support
+
+## 👨‍💻 Author
+
+Jordan Ogunseye
+
+## 🪪 License
+
+This project is licensed under the Apache 2.0 License.
+
